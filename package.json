@@ -1,0 +1,21 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Servidor Rest ()\u001b[D)\u001b[DEjercicio1-Forus)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "Arony Salvador",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  }
+}
