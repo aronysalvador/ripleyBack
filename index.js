@@ -1,8 +1,6 @@
 const express = require('express');
 const conectarDB = require('./config/db');
 const cors = require('cors');
-require('dotenv').config({ path: 'variables.env'});
-
 
 
 const app = express();
@@ -22,6 +20,6 @@ const PORT = process.env.PORT || 4000;
 //Ruta de productos
 app.use('/api/productos', require('./routes/productos'));
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0',() => {
     console.log(`El servidor esta funcionancion en el puerto  ${PORT}`)
 })
