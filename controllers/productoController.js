@@ -12,11 +12,11 @@ exports.crearProducto = async (req,res) =>{
         await producto.save();
 
         //Mensaje de confirmacion     
-        res.json({ msg:'usuario creado correctamente'});
+        res.json({ msg:'Producto creado correctamente'});
 
     } catch (error) {
         console.log(error);
-        res.status(400).json({ msg: 'No se pudo crear el usuario' });
+        res.status(400).json({ msg: 'No se pudo crear el Producto' });
     }
 }
 
@@ -34,7 +34,7 @@ exports.obtenerProductos = async (req,res) => {
 //Actualizar un Producto
 exports.actualizarProducto = async (req,res) => {
     
-    const { productoNombre, productoDescripcion, productoCantidad, productoUbicacion } = req.body;
+    const { productoNombre, productoDescripcion, productoPrecio, productoMarca } = req.body;
     const nuevoProducto = {};
     if(productoNombre) {
         nuevoProducto.productoNombre = productoNombre;
@@ -42,11 +42,11 @@ exports.actualizarProducto = async (req,res) => {
     if(productoDescripcion) {
         nuevoProducto.productoDescripcion = productoDescripcion;
     }
-    if(productoCantidad) {
-        nuevoProducto.productoCantidad = productoCantidad;
+    if(productoPrecio) {
+        nuevoProducto.productoPrecio = productoPrecio;
     }
-    if(productoUbicacion) {
-        nuevoProducto.productoUbicacion = productoUbicacion;
+    if(productoMarca) {
+        nuevoProducto.productoMarca = productoMarca;
     }
     
     try {
@@ -55,7 +55,7 @@ exports.actualizarProducto = async (req,res) => {
 
         //Si el producto existe o no
         if(!producto) {
-            return res.status(404).json({msg:'Proyecto no encontrado'})
+            return res.status(404).json({msg:'Producto no encontrado'})
         }
         //Actualizar
         producto = await Producto.findByIdAndUpdate({_id: req.params.id}, {$set : nuevoProducto} , { new:true });

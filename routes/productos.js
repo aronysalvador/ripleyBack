@@ -21,7 +21,7 @@ router.put('/:id',
 
 );
 
-//Eliminar un Proyecto
+//Eliminar un Producto
 router.delete('/:id',
     productoController.eliminarProducto
 

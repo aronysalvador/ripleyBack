@@ -11,13 +11,13 @@ const ProductosSchema = mongoose.Schema({
         required: true
         
     },
-    productoCantidad: {
+    productoPrecio: {
         type: Number,
         required: true,
         trim: true
 
     },
-    productoUbicacion: {
+    productoMarca: {
         type: String,
         required: true
     }
