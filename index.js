@@ -2,7 +2,6 @@ const express = require('express');
 const conectarDB = require('./config/db');
 const cors = require('cors');
 
-
 const app = express();
 
 //Conexion a la BD
