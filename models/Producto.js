@@ -20,6 +20,10 @@ const ProductosSchema = mongoose.Schema({
     productoMarca: {
         type: String,
         required: true
+    },
+    productoImagen: {
+        type: String,
+        required: true
     }
 });
 

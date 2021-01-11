@@ -24,7 +24,7 @@ exports.obtenerProductos = async (req,res) => {
 
 //Actualizar un Producto
 exports.actualizarProducto = async (req,res) => {  
-    const { productoNombre, productoDescripcion, productoPrecio, productoMarca } = req.body;
+    const { productoNombre, productoDescripcion, productoPrecio, productoMarca, productoImagen } = req.body;
     const nuevoProducto = {};
     if(productoNombre) {
         nuevoProducto.productoNombre = productoNombre;
@@ -37,6 +37,9 @@ exports.actualizarProducto = async (req,res) => {
     }
     if(productoMarca) {
         nuevoProducto.productoMarca = productoMarca;
+    } 
+    if(productoImagen) {
+        nuevoProducto.productoImagen = productoImagen;
     }   
     try {
         let producto = await Producto.findById(req.params.id);
