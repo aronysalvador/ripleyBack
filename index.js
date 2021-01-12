@@ -11,7 +11,8 @@ conectarDB();
 app.use(cors());
 
 //Habilitar express.json(Lerr data de la rest api )
-app.use( express.json({ extended: true }));
+app.use( express.json({ limit: '100mb', extended: true }));
+app.use(express.urlencoded({ limit: '100mb', extended: true }));
 
 //Puerto de la APP(Modificar en variables.env)
 const PORT = process.env.PORT || 4000;

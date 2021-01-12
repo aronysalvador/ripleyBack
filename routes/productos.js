@@ -18,7 +18,7 @@ router.get('/',
 //Actualizar producto via ID
 router.put('/:id',
     productoController.actualizarProducto
-
+  
 );
 
 //Eliminar un Producto
